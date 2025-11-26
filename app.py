@@ -84,7 +84,7 @@ def get_model_choices() -> List[tuple]:
     """Obtém lista de modelos ElevenLabs disponíveis"""
     return [
         ("Eleven v3 (Mais recente, melhor qualidade)", "eleven_v3"),
-        ("Multilingual v2 (29 idiomas)", "eleven_v3"),
+        ("Multilingual v2 (29 idiomas)", "eleven_multilingual_v2"),
         ("Flash v2.5 (Ultra baixa latência)", "eleven_flash_v2_5"),
         ("Turbo v2.5 (Equilíbrio qualidade/velocidade)", "eleven_turbo_v2_5"),
         ("Multilingual v1 (Legado)", "eleven_multilingual_v1"),

@@ -83,11 +83,11 @@ def update_voices_by_provider(provider: str):
 def get_model_choices() -> List[tuple]:
     """Obtém lista de modelos ElevenLabs disponíveis"""
     return [
-        ("Multilingual v2 (Melhor qualidade)", "eleven_multilingual_v2"),
-        ("Turbo v2.5 (Rápido e eficiente)", "eleven_turbo_v2_5"),
-        ("Turbo v2 (Versão rápida)", "eleven_turbo_v2"),
+        ("Eleven v3 (Mais recente, melhor qualidade)", "eleven_v3"),
+        ("Multilingual v2 (29 idiomas)", "eleven_v3"),
+        ("Flash v2.5 (Ultra baixa latência)", "eleven_flash_v2_5"),
+        ("Turbo v2.5 (Equilíbrio qualidade/velocidade)", "eleven_turbo_v2_5"),
         ("Multilingual v1 (Legado)", "eleven_multilingual_v1"),
-        ("Monolingual v1 (Inglês apenas)", "eleven_monolingual_v1"),
     ]
 
 def estimate_job(text: str) -> str:
@@ -818,7 +818,7 @@ def create_interface():
                         model_dropdown = gr.Dropdown(
                             label="Selecione o Modelo de Voz (ElevenLabs)",
                             choices=get_model_choices(),
-                            value="eleven_multilingual_v2",
+                            value="eleven_v3",
                             visible=True,
                             info="Relevante apenas para ElevenLabs"
                         )
@@ -918,7 +918,7 @@ def create_interface():
                         model_dropdown_batch = gr.Dropdown(
                             label="Selecione o Modelo de Voz (ElevenLabs)",
                             choices=get_model_choices(),
-                            value="eleven_multilingual_v2",
+                            value="eleven_v3",
                             info="Relevante apenas para ElevenLabs"
                         )
 
@@ -1024,7 +1024,7 @@ Cada um será processado separadamente com suas próprias configurações!""",
                         model_preview = gr.Dropdown(
                             label="Modelo de Voz (ElevenLabs)",
                             choices=get_model_choices(),
-                            value="eleven_multilingual_v2"
+                            value="eleven_v3"
                         )
 
                         # INPUT: Max Workers

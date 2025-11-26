@@ -83,12 +83,9 @@ def update_voices_by_provider(provider: str):
 def get_model_choices() -> List[tuple]:
     """Obtém lista de modelos ElevenLabs disponíveis"""
     return [
-        ("Multilingual v3 (Mais recente, melhor qualidade)", "eleven_multilingual_v3"),
-        ("Turbo v3 (Mais rápido, geração em tempo real)", "eleven_turbo_v3"),
-        ("Flash v3 (Ultra rápido, baixa latência)", "eleven_flash_v3"),
-        ("Multilingual v2 (Melhor qualidade v2)", "eleven_multilingual_v2"),
+        ("Multilingual v2 (Melhor qualidade)", "eleven_multilingual_v2"),
         ("Turbo v2.5 (Rápido e eficiente)", "eleven_turbo_v2_5"),
-        ("Turbo v2 (Versão anterior rápida)", "eleven_turbo_v2"),
+        ("Turbo v2 (Versão rápida)", "eleven_turbo_v2"),
         ("Multilingual v1 (Legado)", "eleven_multilingual_v1"),
         ("Monolingual v1 (Inglês apenas)", "eleven_monolingual_v1"),
     ]
@@ -821,7 +818,7 @@ def create_interface():
                         model_dropdown = gr.Dropdown(
                             label="Selecione o Modelo de Voz (ElevenLabs)",
                             choices=get_model_choices(),
-                            value="eleven_multilingual_v3",
+                            value="eleven_multilingual_v2",
                             visible=True,
                             info="Relevante apenas para ElevenLabs"
                         )
@@ -921,7 +918,7 @@ def create_interface():
                         model_dropdown_batch = gr.Dropdown(
                             label="Selecione o Modelo de Voz (ElevenLabs)",
                             choices=get_model_choices(),
-                            value="eleven_multilingual_v3",
+                            value="eleven_multilingual_v2",
                             info="Relevante apenas para ElevenLabs"
                         )
 
@@ -1027,7 +1024,7 @@ Cada um será processado separadamente com suas próprias configurações!""",
                         model_preview = gr.Dropdown(
                             label="Modelo de Voz (ElevenLabs)",
                             choices=get_model_choices(),
-                            value="eleven_multilingual_v3"
+                            value="eleven_multilingual_v2"
                         )
 
                         # INPUT: Max Workers

@@ -808,11 +808,12 @@ def create_interface():
                             info="Escolha o serviço de síntese de voz"
                         )
 
-                        # INPUT: Voz
+                        # INPUT: Voz - carrega vozes do provedor padrão
+                        initial_voices = get_voice_choices("elevenlabs")
                         voice_dropdown = gr.Dropdown(
                             label="Selecione a Voz",
-                            choices=[],
-                            value=None,
+                            choices=initial_voices,
+                            value=initial_voices[0] if initial_voices else None,
                             info="As vozes serão carregadas de acordo com o provedor selecionado"
                         )
 
@@ -907,11 +908,12 @@ def create_interface():
                             info="Escolha o serviço de síntese de voz"
                         )
 
-                        # INPUT: Voz (batch)
+                        # INPUT: Voz (batch) - carrega vozes do provedor padrão
+                        initial_voices_batch = get_voice_choices("elevenlabs")
                         voice_dropdown_batch = gr.Dropdown(
                             label="Selecione a Voz",
-                            choices=[],
-                            value=None,
+                            choices=initial_voices_batch,
+                            value=initial_voices_batch[0] if initial_voices_batch else None,
                             info="As vozes serão carregadas de acordo com o provedor selecionado"
                         )
 
